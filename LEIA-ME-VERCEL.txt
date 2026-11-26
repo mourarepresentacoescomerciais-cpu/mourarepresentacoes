@@ -1,0 +1,12 @@
+PUBLICAR NA VERCEL
+
+1. Extraia este ZIP e envie o projeto para um repositorio Git.
+2. Na Vercel, importe esse repositorio como novo projeto.
+3. Framework: Vite. Build: npm run build. Saida: dist. Instalacao: npm ci.
+4. Cadastre as variaveis VITE_SUPABASE_PROJECT_ID, VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY com os valores do arquivo .env incluido.
+5. Publique o projeto. O vercel.json ja inclui as rotas da aplicacao.
+
+As conexoes Supabase existentes foram preservadas. O codigo original utiliza dois projetos Supabase diferentes; ambos continuam como estavam. A publicacao do site nao migra bancos, usuarios ou arquivos.
+Se utilizar redirecionamentos de autenticacao Supabase, cadastre o novo dominio nas URLs permitidas do respectivo projeto.
+
+O helper opcional de cron em supabase/functions/_shared/cron-auth.ts agora utiliza CRON_SECRET e CRON_SECRET_PREVIOUS no ambiente do backend. Nao coloque esses segredos em variaveis VITE_.
